@@ -1,0 +1,10 @@
+{
+    "version": 1,
+    "env": {
+        "AUTH0_DOMAIN": "dev-l-zkx74p.eu.auth0.com",
+        "AUTH0_CLIENT_ID": "rNQ3iBedeipkBrH6UHAWV6nNUPfTiFDl",
+        "AUTH0_CLIENT_SECRET": "0e77SvZCC4-BuRaI2lSurCR-twz5Yp5jktt0XslRX2jx6sLpayRfouIFFY4pAMJ-",
+        "AUTH0_CALLBACK_URL": "http://miniwiki.now.sh/callback",
+        "BASE_URL": "http://miniwiki.now.sh"
+    }
+}

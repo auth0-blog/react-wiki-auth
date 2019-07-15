@@ -1,0 +1,60 @@
+{
+  "name": "nextjs-auth0-wiki",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "npx supervisor -i .next node_modules -e html,js,env server.js",
+    "build": "next build",
+    "now-build": "next build",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auth0-blog/nextjs-passport.git"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/auth0-blog/nextjs-passport/issues"
+  },
+  "homepage": "https://github.com/auth0-blog/nextjs-passport#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
+    "dotenv": "^8.0.0",
+    "dotenv-webpack": "^1.7.0",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "materialize-css": "^1.0.0",
+    "mongoose": "^5.6.3",
+    "next": "^8.1.0",
+    "passport": "^0.4.0",
+    "passport-auth0": "^1.1.0",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.8",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.2.0",
+    "uid-safe": "^2.1.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-styled-components": "^1.10.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.12.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.5.1",
+    "prettier": "^1.10.2"
+  }
+}

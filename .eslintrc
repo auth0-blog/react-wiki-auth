@@ -1,0 +1,43 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react"
+  ],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "react/no-unescaped-entities":"off",
+    "global-require":"off",
+    "jsx-a11y/label-has-for":"off",
+    "jsx-a11y/anchor-is-valid":"off",
+    "prefer-spread":"off",
+    "jsx-a11y/accessible-emoji":"off",
+    "no-alert":"off",
+    "react/react-in-jsx-scope": "off",
+    "consistent-return": "off",
+    "no-console": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 100
+      }
+    ]
+  },
+  "plugins": [
+    "prettier"
+  ]
+}
