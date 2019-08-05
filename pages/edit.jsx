@@ -3,8 +3,12 @@ import Axios from "axios";
 import { withRouter } from "next/router";
 
 const Article = withRouter(props => {
-  const [article, setArticle] = useState("");
   const [failure, setFailure] = useState("");
+
+  const [id, setId] = useState("");
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [text, setText] = useState("");
 
   useEffect(() => {
     // console.log(props.router.query.id);
@@ -17,8 +21,11 @@ const Article = withRouter(props => {
           setTimeout(()=>{
             document.querySelector("#article").value = data[0].text
             .replace(/<br \/>/g,'\n');
-          }, 500)
-          return setArticle(data[0]);
+          }, 500);
+          setId(data[0]._id);
+          setTitle(data[0].title);
+          setDescription(data[0].description);
+          setText(data[0].text);
         } else {
           setFailure("No article Found with that id");
         }
@@ -32,11 +39,6 @@ const Article = withRouter(props => {
     e.preventDefault();
     const confirmation = confirm("Are you sure you want to edit this article ?");
     if (confirmation) {
-      const title = document.querySelector("#title").value.trim();
-      const description = document.querySelector("#description").value.trim();
-      const text = document.querySelector("#article").value.trim();
-      const id = article._id;
-
       const reqData = {
         id,
         title,
@@ -57,9 +59,9 @@ const Article = withRouter(props => {
 
   return (
     <div>
-      {!article && !failure && <div>Loading Article ...</div>}
+      {!id && !failure && <div>Loading Article ...</div>}
 
-      {article && (
+      {id && (
         <form onSubmit={e => handleSubmit(e)}>
           <label htmlFor="title">
             <h5>Title</h5>
@@ -76,8 +78,9 @@ const Article = withRouter(props => {
             required
             id="title"
             type="text"
-            defaultValue={article.title}
+            defaultValue={title}
             placeholder="Give a suitable title ..."
+            onChange={e=>setTitle(e.target.value.trim())}
           />
           <label style={{ marginTop: "1em" }} htmlFor="description">
             <h5>Description</h5>
@@ -92,10 +95,11 @@ const Article = withRouter(props => {
               borderRadius: "8px"
             }}
             required
-            defaultValue={article.description}
+            defaultValue={description}
             id="description"
             type="text"
             placeholder="Write a suitable description in one or two sentences ..."
+            onChange={e=>setDescription(e.target.value.trim())}
           />
           <label style={{ marginTop: "1em" }} htmlFor="article">
             <h5>Article</h5>
@@ -113,6 +117,7 @@ const Article = withRouter(props => {
             required
             id="article"
             placeholder="Write the Article Body ..."
+            onChange={e=>setText(e.target.value.trim())}
           />
           <button style={{ marginTop: "1em", borderRadius: "8px" }} type="submit">
             Submit

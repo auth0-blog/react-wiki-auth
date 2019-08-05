@@ -2,10 +2,6 @@ import { useEffect, useState } from "react";
 import Axios from "axios";
 import { withRouter } from "next/router";
 
-if (typeof window !== "undefined") {
-  require("materialize-css");
-}
-
 const Article = withRouter(props => {
   const [editData, setData] = useState("");
   const [failure, setFailure] = useState("");
@@ -42,7 +38,9 @@ const Article = withRouter(props => {
               <th style={{minWidth:'150px'}}>Event</th>
               <th style={{minWidth:'150px'}}>Date</th>
             </tr>
-
+          </thead>
+          
+            <tbody>
             {editData.map(atom => (
               <tr key={atom.date}>
                 <td style={{minWidth:'150px'}}>{atom.user}</td>
@@ -50,7 +48,7 @@ const Article = withRouter(props => {
                 <td style={{minWidth:'150px'}}>{atom.date}</td>
               </tr>
             ))}
-          </thead>
+            </tbody>
         </table>
         </>
       )}
