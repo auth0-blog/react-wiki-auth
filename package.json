@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "npx supervisor -i .next,node_modules -e html,js,env server.js"
+    "dev": "npx supervisor -i .next,node_modules -e html,js,env server.js",
+    "build": "next build",
+    "start": "node server"
   },
   "repository": {
     "type": "git",
