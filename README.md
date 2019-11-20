@@ -1,6 +1,6 @@
-# Auth-0 Wiki Tutorial
+# Auth0 Wiki App
 
-In this tutorial, you'll learn how to build a wiki-lite app using NextJS, NodeJS, MongoDB & Auth0.
+This is a demonstration of how you can build a wiki-lite app using NextJS, NodeJS, MongoDB & Auth0.
 
 ## Instructions to run :
 
